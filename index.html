@@ -1,11 +1,112 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="es">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
+    <link rel="stylesheet" href="/css/styles.css">
+    <title>ENCOM Games - Login</title>
 </head>
 <body>
-    
+    <div class="glitch-container">
+        <!-- Header con efecto glitch -->
+        <div class="glitch-header">
+            <h1 class="glitch-text" data-text="ENCOM GAMES">ENCOM GAMES</h1>
+            <p class="subtitle">Sistema de Acceso - Arcade</p>
+        </div>
+
+        <!-- Contenedor principal del login -->
+        <div class="login-wrapper">
+            <!-- Formulario de Login -->
+            <div class="login-form-container">
+                <h2>INICIAR SESIÓN</h2>
+                
+                <form class="login-form" id="loginForm">
+                    <!-- Campo Usuario/Email -->
+                    <div class="form-group">
+                        <label for="email">EMAIL O USUARIO</label>
+                        <input 
+                            type="email" 
+                            id="email" 
+                            name="email" 
+                            placeholder="player@encom.com"
+                            required
+                        >
+                        <span class="input-glow"></span>
+                    </div>
+
+                    <!-- Campo Contraseña -->
+                    <div class="form-group password-group">
+                        <label for="password">CONTRASEÑA</label>
+                        <div class="password-input-wrapper">
+                            <input 
+                                type="password" 
+                                id="password" 
+                                name="password" 
+                                placeholder="••••••••"
+                                required
+                            >
+                            <button 
+                                type="button" 
+                                class="toggle-password" 
+                                id="togglePassword"
+                                aria-label="Mostrar/Ocultar contraseña"
+                            >
+                                👁️
+                            </button>
+                            <span class="input-glow"></span>
+                        </div>
+                    </div>
+
+                    <!-- Checkbox Recordarme -->
+                    <div class="form-checkbox">
+                        <input type="checkbox" id="remember" name="remember">
+                        <label for="remember">Recuérdame</label>
+                    </div>
+
+                    <!-- Botón Login -->
+                    <button type="submit" class="btn-login glitch-btn">
+                        <span>ACCESO CONCEDIDO</span>
+                    </button>
+                </form>
+
+                <!-- Separador -->
+                <div class="divider">
+                    <span>O CONECTA CON</span>
+                </div>
+
+                <!-- Login Social -->
+                <div class="social-login">
+                    <button class="btn-social btn-google" id="googleLogin">
+                        <span>Google</span>
+                    </button>
+                    <button class="btn-social btn-facebook" id="facebookLogin">
+                        <span>Facebook</span>
+                    </button>
+                </div>
+
+                <!-- Enlace Olvidé Contraseña -->
+                <div class="forgot-password">
+                    <a href="#" id="forgotLink">¿Olvidaste tu contraseña?</a>
+                </div>
+            </div>
+
+            <!-- Panel de Registro -->
+            <div class="signup-panel">
+                <h2>¿SIN CUENTA?</h2>
+                <p>Únete a la red ENCOM y accede a miles de juegos épicos</p>
+                <button class="btn-signup" id="signupBtn">
+                    CREAR CUENTA
+                </button>
+                <div class="arcade-decoration">
+                    ▀▄▀▄▀▄ ARCADE MODE ▄▀▄▀▄▀
+                </div>
+            </div>
+        </div>
+
+        <!-- Efecto de líneas de escaneo -->
+        <div class="scanlines"></div>
+    </div>
+
+    <script src="java.js"></script>
 </body>
 </html>

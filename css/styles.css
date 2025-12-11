@@ -1,0 +1,628 @@
+/* ============================================
+   ENCOM GAMES - LOGIN GLITCH ARCADE
+   Colores: Azul Rey, Magenta, Cian, Negro
+   ============================================ */
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+html, body {
+    width: 100%;
+    height: 100%;
+    font-family: 'Courier New', monospace;
+    background: #0a0e27;
+    color: #00d9ff;
+    overflow-x: hidden;
+}
+
+/* ============ CONTENEDOR PRINCIPAL ============ */
+.glitch-container {
+    min-height: 100vh;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    background: linear-gradient(135deg, #0a0e27 0%, #1a0a2e 50%, #0f0320 100%);
+    position: relative;
+    padding: 20px;
+}
+
+/* ============ HEADER GLITCH ============ */
+.glitch-header {
+    text-align: center;
+    margin-bottom: 40px;
+    position: relative;
+    z-index: 2;
+}
+
+.glitch-text {
+    font-size: clamp(2rem, 5vw, 3.5rem);
+    font-weight: bold;
+    letter-spacing: 3px;
+    margin-bottom: 10px;
+    position: relative;
+    color: #00d9ff;
+    text-shadow: 
+        0 0 10px #00d9ff,
+        0 0 20px #00d9ff,
+        0 0 30px #00d9ff;
+    animation: glitch-animation 3s infinite;
+}
+
+.glitch-text::before,
+.glitch-text::after {
+    content: attr(data-text);
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+}
+
+.glitch-text::before {
+    animation: glitch-before 0.3s infinite;
+    color: #ff00ff;
+    z-index: -1;
+    text-shadow: -3px 0 #ff00ff, 3px 0 #4169e1;
+}
+
+.glitch-text::after {
+    animation: glitch-after 0.3s infinite;
+    color: #4169e1;
+    z-index: -2;
+    text-shadow: 3px 0 #00d9ff, -3px 0 #ff00ff;
+}
+
+@keyframes glitch-animation {
+    0%, 100% {
+        text-shadow: 
+            0 0 10px #00d9ff,
+            0 0 20px #00d9ff,
+            0 0 30px #00d9ff;
+    }
+    50% {
+        text-shadow: 
+            0 0 15px #ff00ff,
+            0 0 25px #ff00ff,
+            0 0 35px #4169e1;
+    }
+}
+
+@keyframes glitch-before {
+    0% {
+        clip-path: polygon(0 0, 100% 0, 100% 35%, 0 100%);
+        transform: translate(-2px, -2px);
+    }
+    50% {
+        clip-path: polygon(0 50%, 100% 0, 100% 100%, 0 100%);
+        transform: translate(2px, 2px);
+    }
+    100% {
+        clip-path: polygon(0 0, 100% 0, 100% 0, 0 100%);
+        transform: translate(-2px, -2px);
+    }
+}
+
+@keyframes glitch-after {
+    0% {
+        clip-path: polygon(0 50%, 100% 100%, 100% 35%, 0 0);
+        transform: translate(2px, 2px);
+    }
+    50% {
+        clip-path: polygon(0 0, 100% 50%, 100% 100%, 0 100%);
+        transform: translate(-2px, -2px);
+    }
+    100% {
+        clip-path: polygon(0 100%, 100% 100%, 100% 100%, 0 0);
+        transform: translate(2px, 2px);
+    }
+}
+
+.subtitle {
+    color: #ff00ff;
+    font-size: 0.9rem;
+    letter-spacing: 2px;
+    text-shadow: 0 0 10px #ff00ff;
+    animation: pulse-magenta 2s infinite;
+}
+
+@keyframes pulse-magenta {
+    0%, 100% {
+        opacity: 1;
+        text-shadow: 0 0 10px #ff00ff;
+    }
+    50% {
+        opacity: 0.7;
+        text-shadow: 0 0 20px #ff00ff;
+    }
+}
+
+/* ============ WRAPPER LOGIN ============ */
+.login-wrapper {
+    display: grid;
+    grid-template-columns: 1fr;
+    gap: 40px;
+    max-width: 600px;
+    width: 100%;
+    position: relative;
+    z-index: 2;
+}
+
+@media (max-width: 768px) {
+    .login-wrapper {
+        grid-template-columns: 1fr;
+        gap: 30px;
+    }
+}
+
+/* ============ FORMULARIO LOGIN ============ */
+.login-form-container {
+    background: rgba(10, 14, 39, 0.9);
+    border: 2px solid #4169e1;
+    border-radius: 0;
+    padding: 40px;
+    position: relative;
+    box-shadow: 
+        0 0 20px rgba(65, 105, 225, 0.5),
+        inset 0 0 20px rgba(65, 105, 225, 0.1);
+}
+
+.login-form-container::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    height: 2px;
+    background: linear-gradient(90deg, #4169e1, #ff00ff, #00d9ff, #4169e1);
+    animation: gradient-flow 3s infinite;
+}
+
+@keyframes gradient-flow {
+    0% {
+        background-position: 0% 50%;
+    }
+    50% {
+        background-position: 100% 50%;
+    }
+    100% {
+        background-position: 0% 50%;
+    }
+}
+
+.login-form-container h2 {
+    color: #00d9ff;
+    font-size: 1.5rem;
+    margin-bottom: 30px;
+    letter-spacing: 2px;
+    text-shadow: 0 0 10px #00d9ff;
+    text-align: center;
+}
+
+/* ============ GRUPOS DE FORMULARIO ============ */
+.form-group {
+    margin-bottom: 20px;
+    position: relative;
+}
+
+.form-group label {
+    display: block;
+    margin-bottom: 8px;
+    color: #ff00ff;
+    font-size: 0.85rem;
+    letter-spacing: 1px;
+    font-weight: bold;
+    text-shadow: 0 0 5px #ff00ff;
+}
+
+.form-group input[type="email"],
+.form-group input[type="password"] {
+    width: 100%;
+    padding: 12px 15px;
+    background: rgba(0, 217, 255, 0.05);
+    border: 1px solid #4169e1;
+    color: #00d9ff;
+    font-family: 'Courier New', monospace;
+    font-size: 1rem;
+    border-radius: 0;
+    transition: all 0.3s ease;
+    position: relative;
+    z-index: 1;
+}
+
+.form-group input[type="email"]::placeholder,
+.form-group input[type="password"]::placeholder {
+    color: rgba(0, 217, 255, 0.5);
+}
+
+.form-group input[type="email"]:focus,
+.form-group input[type="password"]:focus {
+    outline: none;
+    background: rgba(0, 217, 255, 0.1);
+    border-color: #ff00ff;
+    box-shadow: 
+        0 0 10px rgba(255, 0, 255, 0.5),
+        inset 0 0 10px rgba(255, 0, 255, 0.1);
+    text-shadow: 0 0 5px #ff00ff;
+}
+
+.input-glow {
+    position: absolute;
+    bottom: -2px;
+    left: 0;
+    width: 0;
+    height: 2px;
+    background: linear-gradient(90deg, #4169e1, #ff00ff, #00d9ff);
+    transition: width 0.3s ease;
+    z-index: 0;
+}
+
+.form-group input:focus ~ .input-glow {
+    width: 100%;
+}
+
+/* ============ GRUPO CONTRASEÑA ============ */
+.password-group {
+    margin-bottom: 15px;
+}
+
+.password-input-wrapper {
+    position: relative;
+    display: flex;
+    align-items: center;
+}
+
+.password-input-wrapper input {
+    flex: 1;
+    padding-right: 45px;
+}
+
+.toggle-password {
+    position: absolute;
+    right: 12px;
+    background: none;
+    border: none;
+    color: #00d9ff;
+    cursor: pointer;
+    font-size: 1.2rem;
+    transition: all 0.3s ease;
+    z-index: 2;
+    padding: 5px;
+}
+
+.toggle-password:hover {
+    color: #ff00ff;
+    text-shadow: 0 0 10px #ff00ff;
+    transform: scale(1.2);
+}
+
+/* ============ CHECKBOX ============ */
+.form-checkbox {
+    display: flex;
+    align-items: center;
+    margin-bottom: 25px;
+    cursor: pointer;
+}
+
+.form-checkbox input[type="checkbox"] {
+    width: 18px;
+    height: 18px;
+    margin-right: 10px;
+    accent-color: #ff00ff;
+    cursor: pointer;
+    border-radius: 2px;
+}
+
+.form-checkbox label {
+    margin: 0;
+    cursor: pointer;
+    color: #00d9ff;
+    font-size: 0.9rem;
+    letter-spacing: 0;
+    text-shadow: none;
+}
+
+/* ============ BOTÓN LOGIN ============ */
+.btn-login {
+    width: 100%;
+    padding: 14px;
+    background: linear-gradient(135deg, #4169e1, #ff00ff);
+    border: 2px solid #ff00ff;
+    color: #000;
+    font-weight: bold;
+    font-size: 1rem;
+    letter-spacing: 2px;
+    cursor: pointer;
+    border-radius: 0;
+    font-family: 'Courier New', monospace;
+    transition: all 0.3s ease;
+    position: relative;
+    overflow: hidden;
+    text-shadow: 0 0 5px rgba(0, 217, 255, 0.5);
+}
+
+.glitch-btn::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: -100%;
+    width: 100%;
+    height: 100%;
+    background: linear-gradient(90deg, transparent, rgba(255, 255, 255, 0.3), transparent);
+    transition: left 0.5s ease;
+    z-index: 0;
+}
+
+.btn-login:hover {
+    box-shadow: 
+        0 0 20px #ff00ff,
+        0 0 40px #4169e1,
+        inset 0 0 20px rgba(255, 0, 255, 0.3);
+    transform: translateY(-2px);
+    background: linear-gradient(135deg, #ff00ff, #4169e1);
+    animation: btn-glitch 0.2s infinite;
+}
+
+.btn-login:active {
+    transform: translateY(0);
+    box-shadow: 
+        0 0 10px #ff00ff,
+        0 0 20px #4169e1,
+        inset 0 0 10px rgba(255, 0, 255, 0.5);
+}
+
+@keyframes btn-glitch {
+    0% {
+        clip-path: polygon(0 0, 100% 0, 100% 100%, 0 100%);
+    }
+    50% {
+        clip-path: polygon(0 10%, 100% 0, 100% 90%, 0 100%);
+    }
+    100% {
+        clip-path: polygon(0 0, 100% 0, 100% 100%, 0 100%);
+    }
+}
+
+/* ============ SEPARADOR ============ */
+.divider {
+    margin: 30px 0;
+    position: relative;
+    text-align: center;
+    color: #4169e1;
+    letter-spacing: 1px;
+    font-size: 0.85rem;
+}
+
+.divider::before {
+    content: '';
+    position: absolute;
+    top: 50%;
+    left: 0;
+    width: 30%;
+    height: 1px;
+    background: linear-gradient(90deg, transparent, #4169e1);
+}
+
+.divider::after {
+    content: '';
+    position: absolute;
+    top: 50%;
+    right: 0;
+    width: 30%;
+    height: 1px;
+    background: linear-gradient(90deg, #4169e1, transparent);
+}
+
+/* ============ LOGIN SOCIAL ============ */
+.social-login {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 15px;
+    margin-bottom: 20px;
+}
+
+.btn-social {
+    padding: 12px;
+    border: 1.5px solid;
+    background: rgba(255, 255, 255, 0.05);
+    color: white;
+    font-weight: bold;
+    cursor: pointer;
+    font-size: 0.9rem;
+    letter-spacing: 1px;
+    border-radius: 0;
+    font-family: 'Courier New', monospace;
+    transition: all 0.3s ease;
+    position: relative;
+    overflow: hidden;
+}
+
+.btn-google {
+    border-color: #4169e1;
+    color: #4169e1;
+    text-shadow: 0 0 5px #4169e1;
+}
+
+.btn-google:hover {
+    background: rgba(65, 105, 225, 0.2);
+    box-shadow: 0 0 15px #4169e1;
+    transform: translateY(-2px);
+}
+
+.btn-facebook {
+    border-color: #ff00ff;
+    color: #ff00ff;
+    text-shadow: 0 0 5px #ff00ff;
+}
+
+.btn-facebook:hover {
+    background: rgba(255, 0, 255, 0.2);
+    box-shadow: 0 0 15px #ff00ff;
+    transform: translateY(-2px);
+}
+
+.btn-social:active {
+    transform: translateY(0);
+}
+
+/* ============ OLVIDE CONTRASEÑA ============ */
+.forgot-password {
+    text-align: center;
+    margin-top: 15px;
+}
+
+.forgot-password a {
+    color: #00d9ff;
+    text-decoration: none;
+    font-size: 0.85rem;
+    letter-spacing: 0.5px;
+    transition: all 0.3s ease;
+    text-shadow: 0 0 5px #00d9ff;
+}
+
+.forgot-password a:hover {
+    color: #ff00ff;
+    text-shadow: 0 0 10px #ff00ff;
+    text-decoration: underline;
+}
+
+/* ============ PANEL REGISTRO ============ */
+.signup-panel {
+    display: none;
+}
+
+.signup-panel::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    height: 2px;
+    background: linear-gradient(90deg, #ff00ff, #00d9ff, #4169e1, #ff00ff);
+}
+
+.signup-panel h2 {
+    color: #ff00ff;
+    font-size: 1.5rem;
+    margin-bottom: 15px;
+    letter-spacing: 2px;
+    text-shadow: 0 0 10px #ff00ff;
+}
+
+.signup-panel p {
+    color: #00d9ff;
+    margin-bottom: 30px;
+    font-size: 0.95rem;
+    line-height: 1.6;
+    text-shadow: 0 0 5px #00d9ff;
+}
+
+/* ============ BOTÓN REGISTRO ============ */
+.btn-signup {
+    padding: 12px 25px;
+    background: linear-gradient(135deg, #ff00ff, #4169e1);
+    border: 2px solid #00d9ff;
+    color: #000;
+    font-weight: bold;
+    font-size: 0.95rem;
+    letter-spacing: 1.5px;
+    cursor: pointer;
+    border-radius: 0;
+    font-family: 'Courier New', monospace;
+    transition: all 0.3s ease;
+    position: relative;
+    overflow: hidden;
+    margin-bottom: 20px;
+    text-shadow: 0 0 5px rgba(0, 217, 255, 0.5);
+}
+
+.btn-signup:hover {
+    box-shadow: 
+        0 0 20px #00d9ff,
+        0 0 40px #ff00ff,
+        inset 0 0 20px rgba(0, 217, 255, 0.3);
+    transform: translateY(-2px);
+    background: linear-gradient(135deg, #00d9ff, #ff00ff);
+}
+
+.btn-signup:active {
+    transform: translateY(0);
+}
+
+/* ============ DECORACIÓN ARCADE ============ */
+.arcade-decoration {
+    color: #4169e1;
+    font-size: 0.8rem;
+    letter-spacing: 1px;
+    margin-top: 20px;
+    animation: flicker 2s infinite;
+    text-shadow: 0 0 10px #4169e1;
+}
+
+@keyframes flicker {
+    0%, 100% {
+        opacity: 1;
+        text-shadow: 0 0 10px #4169e1;
+    }
+    50% {
+        opacity: 0.7;
+        text-shadow: 0 0 5px #4169e1;
+    }
+}
+
+/* ============ LÍNEAS DE ESCANEO ============ */
+.scanlines {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    pointer-events: none;
+    background: repeating-linear-gradient(
+        0deg,
+        rgba(0, 217, 255, 0.03),
+        rgba(0, 217, 255, 0.03) 1px,
+        transparent 1px,
+        transparent 2px
+    );
+    animation: scan 8s linear infinite;
+    z-index: 1;
+}
+
+@keyframes scan {
+    0% {
+        transform: translateY(0);
+    }
+    100% {
+        transform: translateY(10px);
+    }
+}
+
+/* ============ RESPONSIVE ============ */
+@media (max-width: 600px) {
+    .glitch-text {
+        font-size: 1.8rem;
+    }
+
+    .login-form-container,
+    .signup-panel {
+        padding: 25px;
+    }
+
+    .login-form-container h2,
+    .signup-panel h2 {
+        font-size: 1.2rem;
+    }
+
+    .social-login {
+        grid-template-columns: 1fr;
+    }
+
+    .btn-social span,
+    .btn-login span {
+        font-size: 0.85rem;
+    }
+}
