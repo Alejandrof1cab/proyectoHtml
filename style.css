@@ -1,0 +1,441 @@
+/* ==========================================
+   FOOTER ARCADE GLITCH - ESTILOS GENERALES
+   ========================================== */
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: 'Courier New', monospace;
+    background-color: #0a0e27;
+    color: #00ff00;
+}
+
+/* ==========================================
+   FOOTER PRINCIPAL
+   ========================================== */
+
+.arcade-footer {
+    background: linear-gradient(135deg, #0a0e27 0%, #1a0033 50%, #0a0e27 100%);
+    border-top: 4px solid #00ff00;
+    border-top-style: dashed;
+    padding: 50px 20px;
+    position: relative;
+    overflow: hidden;
+}
+
+/* Efecto de escaneo de pantalla arcade */
+.arcade-footer::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background: repeating-linear-gradient(
+        0deg,
+        rgba(0, 255, 0, 0.03) 0px,
+        rgba(0, 255, 0, 0.03) 2px,
+        transparent 2px,
+        transparent 4px
+    );
+    pointer-events: none;
+    animation: scanlines 8s linear infinite;
+}
+
+/* ==========================================
+   ANIMACIÓN DE LÍNEAS DE ESCANEO
+   ========================================== */
+
+@keyframes scanlines {
+    0% {
+        transform: translateY(0);
+    }
+    100% {
+        transform: translateY(10px);
+    }
+}
+
+/* ==========================================
+   CONTENEDOR DEL FOOTER
+   ========================================== */
+
+.footer-container {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+    gap: 40px;
+    max-width: 1200px;
+    margin: 0 auto;
+    position: relative;
+    z-index: 1;
+    padding: 20px;
+}
+
+/* ==========================================
+   SECCIONES DEL FOOTER
+   ========================================== */
+
+.footer-section {
+    background: rgba(0, 255, 0, 0.05);
+    border: 2px solid #00ff00;
+    padding: 25px;
+    position: relative;
+    transition: all 0.3s ease;
+    box-shadow: 
+        0 0 10px rgba(0, 255, 0, 0.2),
+        inset 0 0 10px rgba(0, 255, 0, 0.1);
+}
+
+/* Efecto glitch en hover de secciones */
+.footer-section:hover {
+    background: rgba(255, 0, 100, 0.1);
+    border-color: #ff0064;
+    box-shadow: 
+        0 0 20px rgba(255, 0, 100, 0.5),
+        inset 0 0 20px rgba(255, 0, 100, 0.2),
+        -3px -3px 0 #ff0064,
+        3px 3px 0 #00ffff;
+    transform: translate(-2px, 2px);
+    animation: glitch-shake 0.2s infinite;
+}
+
+@keyframes glitch-shake {
+    0% { transform: translate(-2px, 2px); }
+    50% { transform: translate(2px, -2px); }
+    100% { transform: translate(-2px, 2px); }
+}
+
+/* Efecto glitch visual en secciones hovereadas */
+.footer-section:hover::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background: repeating-linear-gradient(
+        90deg,
+        rgba(255, 0, 100, 0.3) 0px,
+        rgba(255, 0, 100, 0.3) 2px,
+        transparent 2px,
+        transparent 4px
+    );
+    animation: glitch-flicker 0.15s infinite;
+    pointer-events: none;
+}
+
+@keyframes glitch-flicker {
+    0%, 100% { opacity: 1; }
+    50% { opacity: 0.5; }
+}
+
+/* ==========================================
+   TÍTULOS DE SECCIONES
+   ========================================== */
+
+.footer-title {
+    color: #00ff00;
+    font-size: 14px;
+    font-weight: bold;
+    letter-spacing: 3px;
+    margin-bottom: 20px;
+    text-transform: uppercase;
+    position: relative;
+    text-shadow: 0 0 10px #00ff00;
+    animation: glow-pulse 2s ease-in-out infinite;
+}
+
+@keyframes glow-pulse {
+    0%, 100% {
+        text-shadow: 0 0 10px #00ff00;
+        color: #00ff00;
+    }
+    50% {
+        text-shadow: 0 0 20px #00ff00, 0 0 30px #00ff00;
+        color: #00ff00;
+    }
+}
+
+/* ==========================================
+   LISTAS DE ENLACES
+   ========================================== */
+
+.footer-links {
+    list-style: none;
+    display: flex;
+    flex-direction: column;
+    gap: 12px;
+}
+
+/* ==========================================
+   ENLACES DEL FOOTER
+   ========================================== */
+
+.footer-link {
+    color: #00ff00;
+    text-decoration: none;
+    font-size: 13px;
+    letter-spacing: 1px;
+    position: relative;
+    padding: 8px 0;
+    transition: all 0.2s ease;
+    display: inline-block;
+}
+
+/* Efecto hover en enlaces */
+.footer-link:hover {
+    color: #ff0064;
+    text-shadow: 
+        0 0 10px #ff0064,
+        0 0 20px #00ffff;
+    animation: glitch-text 0.3s ease;
+}
+
+@keyframes glitch-text {
+    0%, 100% {
+        text-shadow: 
+            0 0 10px #ff0064,
+            0 0 20px #00ffff;
+        transform: translate(0, 0);
+    }
+    25% {
+        text-shadow: 
+            -2px 0 #ff0064,
+            2px 0 #00ffff;
+        transform: translate(2px, -2px);
+    }
+    50% {
+        text-shadow: 
+            2px 0 #ff0064,
+            -2px 0 #00ffff;
+        transform: translate(-2px, 2px);
+    }
+    75% {
+        text-shadow: 
+            0 0 10px #ff0064,
+            0 0 20px #00ffff;
+        transform: translate(1px, -1px);
+    }
+}
+
+/* Pseudo-elemento decorativo en enlaces */
+.footer-link::after {
+    content: '';
+    position: absolute;
+    bottom: -2px;
+    left: 0;
+    width: 0;
+    height: 2px;
+    background: linear-gradient(90deg, #ff0064, #00ffff);
+    transition: width 0.3s ease;
+    box-shadow: 0 0 10px #ff0064;
+}
+
+.footer-link:hover::after {
+    width: 100%;
+}
+
+/* ==========================================
+   ENLACES SOCIALES
+   ========================================== */
+
+.social-links {
+    flex-direction: row;
+    flex-wrap: wrap;
+    gap: 8px;
+}
+
+.social-link {
+    background: rgba(0, 255, 0, 0.1);
+    border: 1px solid #00ff00;
+    padding: 6px 12px;
+    border-radius: 3px;
+    font-weight: bold;
+    font-size: 11px;
+}
+
+.social-link:hover {
+    background: rgba(255, 0, 100, 0.3);
+    border-color: #ff0064;
+    color: #ff0064;
+    box-shadow: 
+        0 0 15px #ff0064,
+        inset 0 0 10px rgba(255, 0, 100, 0.3);
+    transform: scale(1.1);
+}
+
+/* ==========================================
+   DIVISOR ARCADE
+   ========================================== */
+
+.footer-divider {
+    height: 4px;
+    background: linear-gradient(
+        90deg,
+        transparent,
+        #00ff00 25%,
+        #ff0064 50%,
+        #00ffff 75%,
+        transparent
+    );
+    margin: 40px 0;
+    position: relative;
+    box-shadow: 0 0 15px #00ff00, 0 0 25px #ff0064;
+    animation: divider-flicker 1.5s ease-in-out infinite;
+}
+
+@keyframes divider-flicker {
+    0%, 100% {
+        opacity: 1;
+    }
+    50% {
+        opacity: 0.7;
+    }
+}
+
+/* ==========================================
+   PIE FINAL DEL FOOTER
+   ========================================== */
+
+.footer-bottom {
+    text-align: center;
+    max-width: 1200px;
+    margin: 0 auto;
+    position: relative;
+    z-index: 1;
+}
+
+.copyright {
+    font-size: 12px;
+    color: #00ff00;
+    letter-spacing: 2px;
+    margin-bottom: 15px;
+    text-shadow: 0 0 10px rgba(0, 255, 0, 0.5);
+    animation: copyright-glow 2s ease-in-out infinite;
+}
+
+@keyframes copyright-glow {
+    0%, 100% {
+        text-shadow: 0 0 10px rgba(0, 255, 0, 0.5);
+    }
+    50% {
+        text-shadow: 0 0 20px rgba(0, 255, 0, 0.8);
+    }
+}
+
+.glitch-line {
+    height: 2px;
+    background: repeating-linear-gradient(
+        90deg,
+        #00ff00 0px,
+        #00ff00 10px,
+        transparent 10px,
+        transparent 20px
+    );
+    margin: 15px 0;
+    animation: glitch-line-move 3s linear infinite;
+}
+
+@keyframes glitch-line-move {
+    0% {
+        background-position: 0 0;
+    }
+    100% {
+        background-position: 20px 0;
+    }
+}
+
+.cookies-notice {
+    font-size: 11px;
+    color: #00ffff;
+    letter-spacing: 1px;
+    margin-top: 15px;
+}
+
+.cookies-notice .footer-link {
+    color: #00ffff;
+}
+
+.cookies-notice .footer-link:hover {
+    color: #ff0064;
+    text-shadow: 
+        0 0 10px #ff0064,
+        0 0 20px #ff0064;
+}
+
+/* ==========================================
+   RESPONSIVE DESIGN
+   ========================================== */
+
+@media (max-width: 768px) {
+    .footer-container {
+        grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));
+        gap: 20px;
+        padding: 10px;
+    }
+
+    .footer-section {
+        padding: 15px;
+        border-width: 1px;
+    }
+
+    .footer-title {
+        font-size: 12px;
+        letter-spacing: 2px;
+        margin-bottom: 15px;
+    }
+
+    .footer-link {
+        font-size: 12px;
+    }
+
+    .copyright {
+        font-size: 11px;
+    }
+
+    .cookies-notice {
+        font-size: 10px;
+    }
+}
+
+@media (max-width: 480px) {
+    .arcade-footer {
+        padding: 30px 15px;
+    }
+
+    .footer-container {
+        grid-template-columns: 1fr;
+        gap: 15px;
+    }
+
+    .social-links {
+        flex-direction: column;
+        gap: 8px;
+    }
+
+    .social-link {
+        display: block;
+        width: 100%;
+        text-align: center;
+    }
+}
+
+/* ==========================================
+   ACCESIBILIDAD
+   ========================================== */
+
+.footer-link:focus {
+    outline: 2px dashed #ff0064;
+    outline-offset: 3px;
+}
+
+.footer-section:focus-within {
+    box-shadow: 
+        0 0 20px rgba(255, 0, 100, 0.5),
+        inset 0 0 20px rgba(255, 0, 100, 0.2),
+        -3px -3px 0 #ff0064,
+        3px 3px 0 #00ffff;
+}
