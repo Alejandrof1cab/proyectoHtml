@@ -6,52 +6,62 @@ body {
     font-family: 'Courier New', Courier, monospace;
     background-color: black;
     color: white;
-    /* Texto blanco por defecto */
 }
 
-/* Contenedor principal de cada videojuego */
-.videojuegos {
-    border-bottom: 2px solid #333;
-    /* Separación entre juegos */
-    padding: 40px 20px;
-    max-width: 1000px;
+/* Contenedor Grid para las Cartas */
+.games-grid {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 30px;
+    padding: 20px;
+    max-width: 1200px;
     margin: 0 auto;
 }
 
-/* Estructura interna del juego */
+/* Contenedor individual de cada videojuego (la carta) */
+.videojuegos {
+    flex: 0 1 350px;
+    /* Base width of 350px, can shrink but not grow too much */
+    margin: 0;
+    padding: 0;
+    /* Removed border-bottom as they are now cards */
+}
+
+/* Estructura interna del juego sin cambios mayores, pero adaptado a carta vertical */
 .juegos {
     display: flex;
     flex-direction: column;
     align-items: center;
     text-align: center;
     background-color: #111;
-    /* Fondo ligeramente más claro para la tarjeta */
     padding: 20px;
     border-radius: 15px;
     box-shadow: 0 4px 15px rgba(255, 255, 255, 0.1);
+    height: 100%;
+    /* Make sure cards are same height */
+    transition: transform 0.3s ease;
+}
+
+.juegos:hover {
+    transform: translateY(-10px);
+    /* Lift effect */
+    box-shadow: 0 10px 25px rgba(0, 255, 136, 0.2);
 }
 
 .juegos img {
     width: 100%;
-    max-width: 400px;
-    /* Limitar el tamaño de la imagen */
-    height: auto;
+    height: 200px;
+    /* Fixed height for uniformity */
+    object-fit: cover;
     border-radius: 10px;
     margin-bottom: 20px;
-    box-shadow: 0 0 20px rgba(0, 255, 136, 0.2);
-    /* Resplandor sutil */
-    transition: transform 0.3s;
-}
-
-.juegos img:hover {
-    transform: scale(1.05);
-    /* Zoom al pasar el mouse */
+    box-shadow: 0 0 10px rgba(0, 255, 136, 0.2);
 }
 
 .juegos h1 {
-    font-size: 2rem;
+    font-size: 1.5rem;
     color: #00ff88;
-    /* Color neón para el título */
     text-transform: uppercase;
     margin-bottom: 15px;
     text-shadow: 0 0 10px rgba(0, 255, 136, 0.5);
@@ -64,19 +74,18 @@ body {
     margin: 0 0 20px 0;
     text-align: left;
     width: 100%;
-    max-width: 500px;
+    flex-grow: 1;
+    /* Pushes button to bottom */
 }
 
 .caracteristicas li {
-    margin-bottom: 10px;
-    font-size: 1.1rem;
-    line-height: 1.5;
+    margin-bottom: 8px;
+    font-size: 0.9rem;
+    line-height: 1.4;
 }
 
 .caracteristicas strong {
     color: #00ccff;
-    /* Color destacado azul */
-    text-transform: capitalize;
 }
 
 /* Botón de descargar */
@@ -84,32 +93,42 @@ body {
     background-color: #00ff88;
     color: black;
     border: none;
-    padding: 15px 40px;
-    font-size: 1.2rem;
+    padding: 10px 30px;
+    font-size: 1rem;
     font-weight: bold;
     text-transform: uppercase;
     cursor: pointer;
     border-radius: 5px;
     transition: all 0.3s ease;
-    margin-top: 10px;
+    width: 100%;
 }
 
 .descargar:hover {
     background-color: white;
     box-shadow: 0 0 20px #00ff88;
-    transform: translateY(-3px);
 }
 
-/* Layout adaptable para pantallas grandes (Imagen a la izquierda, texto a la derecha) */
-@media (min-width: 768px) {
-    .juegos {
-        flex-direction: row;
-        text-align: left;
-        gap: 40px;
-        align-items: flex-start;
-    }
+/* Carousel Wrapper */
+.carusel-- {
+    text-align: center;
+    padding: 20px;
+}
 
-    .juegos img {
-        margin-bottom: 0;
-    }
+/* Carousel Personalizado (Restored) */
+.custom-carousel {
+    max-width: 1000px;
+    /* Increased from 600px */
+    margin: 40px auto;
+    border: 2px solid #00ff88;
+    border-radius: 15px;
+    box-shadow: 0 0 20px rgba(0, 255, 136, 0.3);
+    overflow: hidden;
+    background-color: #000;
+}
+
+.custom-carousel .carousel-item img {
+    height: 500px;
+    /* Increased from 350px */
+    object-fit: contain;
+    border-bottom: 1px solid #333;
 }

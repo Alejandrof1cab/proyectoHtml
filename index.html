@@ -1,67 +1,228 @@
-<!DOCTYPE html>
+<!doctype html>
 <html lang="en">
 
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>ENCOM GAMES</title>
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/css/bootstrap.min.css" rel="stylesheet"
         integrity="sha384-sRIl4kxILFvY47J16cr9ZwB07vP4J8+LH7qKQnuqkuIAvNWLzeN8tE5YBujZqJLB" crossorigin="anonymous">
-    <title>encom</title>
     <link rel="stylesheet" href="ecomer.css">
 </head>
 
 <body>
+
     <!-- Encabezado Principal -->
     <div style="text-align: center; padding: 40px;">
         <h1 style="font-size: 3rem; color: white; text-shadow: 0 0 20px #00ff88;"> ENCOM GAMES</h1>
     </div>
 
     <!-- esto va hacer un carusel-->
-    <div id="carouselExampleIndicators" class="carousel slide">
-        <div class="carousel-indicators">
-            <button type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide-to="0" class="active"
-                aria-current="true" aria-label="Slide 1"></button>
-            <button type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide-to="1"
-                aria-label="Slide 2"></button>
-            <button type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide-to="2"
-                aria-label="Slide 3"></button>
+    <section class="container">
+        <div id="carouselExampleCaptions" class="carousel slide custom-carousel" data-bs-ride="carousel"
+            data-bs-interval="3000">
+            <div class="carousel-indicators">
+                <button type="button" data-bs-target="#carouselExampleCaptions" data-bs-slide-to="0" class="active"
+                    aria-current="true" aria-label="Slide 1"></button>
+                <button type="button" data-bs-target="#carouselExampleCaptions" data-bs-slide-to="1"
+                    aria-label="Slide 2"></button>
+                <button type="button" data-bs-target="#carouselExampleCaptions" data-bs-slide-to="2"
+                    aria-label="Slide 3"></button>
+                <button type="button" data-bs-target="#carouselExampleCaptions" data-bs-slide-to="3"
+                    aria-label="Slide 4"></button>
+            </div>
+            <div class="carousel-inner">
+                <div class="carousel-item active">
+                    <img src="imagene  juegos/assasing creed.jpg" class="d-block w-100" alt="...">
+                    <div class="carousel-caption d-none d-md-block">
+                        <h5>assasing creed</h5>
+
+                    </div>
+                </div>
+                <div class="carousel-item">
+                    <img src="imagene  juegos/deas space.jpg" class="d-block w-100" alt="...">
+                    <div class="carousel-caption d-none d-md-block">
+                        <h5>dead space</h5>
+
+                    </div>
+                </div>
+                <div class="carousel-item">
+                    <img src="imagene  juegos/uncharter.jpg" class="d-block w-100" alt="...">
+                    <div class="carousel-caption d-none d-md-block">
+                        <h5>uncharter</h5>
+
+                    </div>
+                </div>
+                <div class="carousel-item">
+                    <img src="imagene  juegos/metro.jpg" class="d-block w-100" alt="...">
+                    <div class="carousel-caption d-none d-md-block">
+                        <h5>metro</h5>
+
+                    </div>
+                </div>
+            </div>
+            <button class="carousel-control-prev" type="button" data-bs-target="#carouselExampleCaptions"
+                data-bs-slide="prev">
+                <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+                <span class="visually-hidden">Previous</span>
+            </button>
+            <button class="carousel-control-next" type="button" data-bs-target="#carouselExampleCaptions"
+                data-bs-slide="next">
+                <span class="carousel-control-next-icon" aria-hidden="true"></span>
+                <span class="visually-hidden">Next</span>
+            </button>
         </div>
-        <div class="carousel-inner">
-            <div class="carousel-item active">
-                <img src="imagene  juegos/uncharter.jpg" class="d-block w-100">
-            </div>
-            <div class="carousel-item">
-                <img src="imagene  juegos/mk1.jpg" class="d-block w-100">
-            </div>
-            <div class="carousel-item">
-                <img src="imagene  juegos/call of duty.jpg" class="d-block w-100">
-            </div>
-        </div>
-        <button class="carousel-control-prev" type="button" data-bs-target="#carouselExampleIndicators"
-            data-bs-slide="prev">
-            <span class="carousel-control-prev-icon" aria-hidden="true"></span>
-            <span class="visually-hidden">Previous</span>
-        </button>
-        <button class="carousel-control-next" type="button" data-bs-target="#carouselExampleIndicators"
-            data-bs-slide="next">
-            <span class="carousel-control-next-icon" aria-hidden="true"></span>
-            <span class="visually-hidden">Next</span>
-        </button>
+    </section>
+
+
+    <div class="games-grid">
+        <!-- SECCIÓN 1: MORTAL KOMBAT 1 -->
+        <section class="videojuegos">
+            <header>
+                <div class="juegos">
+                    <img src="imagene  juegos/mk1.jpg" alt="Mortal Kombat 1">
+                    <div>
+                        <h1>Mortal Kombat 1</h1>
+                        <ul class="caracteristicas">
+                            <li class="plataforma"><strong>Plataforma:</strong> PC, PS5, Xbox</li>
+                            <li class="genero"><strong>Género:</strong> Lucha</li>
+                            <li class="descripcion"><strong>Descripción:</strong> Descubre un nuevo universo de Mortal
+                                Kombat™ creado por Liu Kang, Dios del Fuego. ¡Una nueva era con un nuevo sistema de
+                                kombate!
+                            </li>
+                        </ul>
+                        <button class="descargar">Descargar</button>
+                    </div>
+                </div>
+            </header>
+        </section>
+
+        <!-- SECCIÓN 2: CALL OF DUTY -->
+        <section class="videojuegos">
+            <header>
+                <div class="juegos">
+                    <img src="imagene  juegos/call of duty.jpg" alt="Call of Duty">
+                    <div>
+                        <h1>Call of Duty</h1>
+                        <ul class="caracteristicas">
+                            <li class="plataforma"><strong>Plataforma:</strong> PC, Xbox, PS4/5</li>
+                            <li class="genero"><strong>Género:</strong> Disparos / Battle Royale</li>
+                            <li class="descripcion"><strong>Descripción:</strong> Te damos la bienvenida a Warzone™, la
+                                zona de combate masivo gratuita. Modos emocionantes en Verdansk y Rebirth Island.
+                            </li>
+                        </ul>
+                        <button class="descargar">Descargar</button>
+                    </div>
+                </div>
+            </header>
+        </section>
+
+        <!-- SECCIÓN 3: MINECRAFT -->
+        <section class="videojuegos">
+            <header>
+                <div class="juegos">
+                    <img src="imagene  juegos/minecraft.jpg" alt="Minecraft">
+                    <div>
+                        <h1>Minecraft</h1>
+                        <ul class="caracteristicas">
+                            <li class="plataforma"><strong>Plataforma:</strong> Todas</li>
+                            <li class="genero"><strong>Género:</strong> Aventura / Construcción</li>
+                            <li class="descripcion"><strong>Descripción:</strong> Coloca bloques y vive aventuras.
+                                Explora
+                                mundos generados aleatoriamente y construye cosas maravillosas, desde una simple casa
+                                hasta
+                                el más grandioso de los castillos.
+                            </li>
+                        </ul>
+                        <button class="descargar">Descargar</button>
+                    </div>
+                </div>
+            </header>
+        </section>
+
+        <!-- SECCIÓN 4: ELDEN RING -->
+        <section class="videojuegos">
+            <header>
+                <div class="juegos">
+                    <img src="imagene  juegos/eldel ring.jpg" alt="Elden Ring">
+                    <div>
+                        <h1>Elden Ring</h1>
+                        <ul class="caracteristicas">
+                            <li class="plataforma"><strong>Plataforma:</strong> PC, PS5, Xbox</li>
+                            <li class="genero"><strong>Género:</strong> RPG de Acción</li>
+                            <li class="descripcion"><strong>Descripción:</strong> Levántate, Sinluz, y déjate guiar por
+                                la
+                                gracia para esgrimir el poder del Anillo de Elden y convertirte en el Señor del Círculo
+                                en
+                                las Tierras Intermedias.
+                            </li>
+                        </ul>
+                        <button class="descargar">Descargar</button>
+                    </div>
+                </div>
+            </header>
+        </section>
+
+        <!-- SECCIÓN 5: FORZA -->
+        <section class="videojuegos">
+            <header>
+                <div class="juegos">
+                    <img src="imagene  juegos/forza.jpg" alt="Forza">
+                    <div>
+                        <h1>Forza Horizon 5</h1>
+                        <ul class="caracteristicas">
+                            <li class="plataforma"><strong>Plataforma:</strong> PC, Xbox</li>
+                            <li class="genero"><strong>Género:</strong> Carreras</li>
+                            <li class="descripcion"><strong>Descripción:</strong> ¡La aventura Horizon definitiva te
+                                espera!
+                                Explora los vibrantes y cambiantes paisajes del mundo abierto de México con una acción
+                                de
+                                conducción ilimitada y divertida.
+                            </li>
+                        </ul>
+                        <button class="descargar">Descargar</button>
+                    </div>
+                </div>
+            </header>
+        </section>
+
+        <!-- SECCIÓN 6: ELDEN RING (Added) -->
+        <section class="videojuegos">
+            <header>
+                <div class="juegos">
+                    <img src="imagene  juegos/eldel ring.jpg" alt="Elden Ring">
+                    <div>
+                        <h1>Elden Ring</h1>
+                        <ul class="caracteristicas">
+                            <li class="plataforma"><strong>Plataforma:</strong> PC, PS5, Xbox</li>
+                            <li class="genero"><strong>Género:</strong> RPG de Acción</li>
+                            <li class="descripcion"><strong>Descripción:</strong> Levántate, Sinluz, y déjate guiar por
+                                la
+                                gracia para esgrimir el poder del Anillo de Elden y convertirte en el Señor del Círculo
+                                en
+                                las Tierras Intermedias.
+                            </li>
+                        </ul>
+                        <button class="descargar">Descargar</button>
+                    </div>
+                </div>
+            </header>
+        </section>
     </div>
 
-    <!-- SECCIÓN 1: MORTAL KOMBAT 1 -->
+    <!-- SECCIÓN 6: ELDEN RING (Added) -->
     <section class="videojuegos">
         <header>
             <div class="juegos">
-                <!-- Ruta corregida: 'imagene  juegos' con doble espacio -->
-                <img src="/imagene  juegos/mk1.jpg" alt="Mortal Kombat 1">
+                <img src="imagene  juegos/deas space.jpg" alt="Elden Ring">
                 <div>
-                    <h1>Mortal Kombat 1</h1>
+                    <h1>Deud Space</h1>
                     <ul class="caracteristicas">
                         <li class="plataforma"><strong>Plataforma:</strong> PC, PS5, Xbox</li>
-                        <li class="genero"><strong>Género:</strong> Lucha</li>
-                        <li class="descripcion"><strong>Descripción:</strong> Descubre un nuevo universo de Mortal
-                            Kombat™ creado por Liu Kang, Dios del Fuego. ¡Una nueva era con un nuevo sistema de kombate!
+                        <li class="genero"><strong>Género:</strong> Acción</li>
+                        <li class="descripcion"><strong>Descripción:</strong> Deus Space es un juego de acción
+                            en el que debes controlar un personaje que debe salvar su mundo de una amenaza
+                            extraterrestre.
                         </li>
                     </ul>
                     <button class="descargar">Descargar</button>
@@ -69,93 +230,12 @@
             </div>
         </header>
     </section>
-
-    <!-- SECCIÓN 2: CALL OF DUTY -->
-    <section class="videojuegos">
-        <header>
-            <div class="juegos">
-                <img src="/imagene  juegos/call of duty.jpg" alt="Call of Duty">
-                <div>
-                    <h1>Call of Duty</h1>
-                    <ul class="caracteristicas">
-                        <li class="plataforma"><strong>Plataforma:</strong> PC, Xbox, PS4/5</li>
-                        <li class="genero"><strong>Género:</strong> Disparos / Battle Royale</li>
-                        <li class="descripcion"><strong>Descripción:</strong> Te damos la bienvenida a Warzone™, la
-                            zona de combate masivo gratuita. Modos emocionantes en Verdansk y Rebirth Island.
-                        </li>
-                    </ul>
-                    <button class="descargar">Descargar</button>
-                </div>
-            </div>
-        </header>
-    </section>
-
-    <!-- SECCIÓN 3: MINECRAFT -->
-    <section class="videojuegos">
-        <header>
-            <div class="juegos">
-                <img src="/imagene  juegos/minecraft.jpg" alt="Minecraft">
-                <div>
-                    <h1>Minecraft</h1>
-                    <ul class="caracteristicas">
-                        <li class="plataforma"><strong>Plataforma:</strong> Todas</li>
-                        <li class="genero"><strong>Género:</strong> Aventura / Construcción</li>
-                        <li class="descripcion"><strong>Descripción:</strong> Coloca bloques y vive aventuras. Explora
-                            mundos generados aleatoriamente y construye cosas maravillosas, desde una simple casa hasta
-                            el más grandioso de los castillos.
-                        </li>
-                    </ul>
-                    <button class="descargar">Descargar</button>
-                </div>
-            </div>
-        </header>
-    </section>
-
-    <!-- SECCIÓN 4: ELDEN RING -->
-    <section class="videojuegos">
-        <header>
-            <div class="juegos">
-                <img src="/imagene  juegos/eldel ring.jpg" alt="Elden Ring">
-                <div>
-                    <h1>Elden Ring</h1>
-                    <ul class="caracteristicas">
-                        <li class="plataforma"><strong>Plataforma:</strong> PC, PS5, Xbox</li>
-                        <li class="genero"><strong>Género:</strong> RPG de Acción</li>
-                        <li class="descripcion"><strong>Descripción:</strong> Levántate, Sinluz, y déjate guiar por la
-                            gracia para esgrimir el poder del Anillo de Elden y convertirte en el Señor del Círculo en
-                            las Tierras Intermedias.
-                        </li>
-                    </ul>
-                    <button class="descargar">Descargar</button>
-                </div>
-            </div>
-        </header>
-    </section>
-
-    <!-- SECCIÓN 5: FORZA -->
-    <section class="videojuegos">
-        <header>
-            <div class="juegos">
-                <img src="/imagene  juegos/forza.jpg" alt="Forza">
-                <div>
-                    <h1>Forza Horizon 5</h1>
-                    <ul class="caracteristicas">
-                        <li class="plataforma"><strong>Plataforma:</strong> PC, Xbox</li>
-                        <li class="genero"><strong>Género:</strong> Carreras</li>
-                        <li class="descripcion"><strong>Descripción:</strong> ¡La aventura Horizon definitiva te espera!
-                            Explora los vibrantes y cambiantes paisajes del mundo abierto de México con una acción de
-                            conducción ilimitada y divertida.
-                        </li>
-                    </ul>
-                    <button class="descargar">Descargar</button>
-                </div>
-            </div>
-        </header>
-    </section>
+    </div>
 
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/js/bootstrap.bundle.min.js"
         integrity="sha384-ygbV9kiqUc6oa4msXn9868pTtWMgiQaeYH7/t7LECLbyPA2x65Kgf80OJFdroafW"
         crossorigin="anonymous"></script>
+    <script src="java.js"></script>
 </body>
 
 </html>
