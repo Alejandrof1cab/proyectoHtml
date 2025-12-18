@@ -132,3 +132,66 @@ body {
     object-fit: contain;
     border-bottom: 1px solid #333;
 }
+
+/* Dead Space Premium Style */
+.dead-space-card .juegos {
+    border: 1px solid rgba(0, 255, 136, 0.3);
+    box-shadow: 0 0 15px rgba(0, 255, 136, 0.1);
+    position: relative;
+    overflow: hidden;
+    background-color: #0a0a0a;
+}
+
+.dead-space-card .juegos:hover {
+    border-color: #00ff88;
+    box-shadow: 0 0 30px rgba(0, 255, 136, 0.4);
+    transform: translateY(-10px) scale(1.02);
+}
+
+.dead-space-card h1 {
+    color: #00ff88 !important;
+    text-shadow: 0 0 15px rgba(0, 255, 136, 0.8) !important;
+}
+
+.dead-space-card .descargar {
+    background-color: #00ff88 !important;
+    color: black !important;
+}
+
+.dead-space-card .descargar:hover {
+    background-color: white !important;
+    color: #00ff88 !important;
+    box-shadow: 0 0 25px #00ff88 !important;
+}
+
+/* Horror Glitch Effect Animation */
+@keyframes flicker {
+    0% {
+        opacity: 1;
+    }
+
+    5% {
+        opacity: 0.8;
+    }
+
+    10% {
+        opacity: 1;
+    }
+
+    15% {
+        opacity: 0.9;
+    }
+
+    20% {
+        opacity: 1;
+    }
+
+    100% {
+        opacity: 1;
+    }
+}
+
+.dead-space-card img {
+    animation: flicker 5s infinite;
+    border-bottom: 2px solid #00ff88;
+}
